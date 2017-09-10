@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">touristando</string>
+    <string name="usuario">Login</string>
+    <string name="email">Email</string>
+    <string name="pass">Senha</string>
+    <string name="title_activity_home">Touristando</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Touristando</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Lista</string>
+    <string name="title_notifications">Mapa</string>
+    <string name="linkTour"><a href="https://faustikle.wixsite.com/touristando">Acesse: Touristando</a></string>
+</resources>
