@@ -13,5 +13,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Lista</string>
     <string name="title_notifications">Mapa</string>
-    <string name="linkTour"><a href="https://faustikle.wixsite.com/touristando">Acesse: Touristando</a></string>
+    <string name="linktour"><a href="https://faustikle.wixsite.com/touristando">Acesse: Touristando</a></string>
+    <string name="title_activity_navigation">NavigationActivity</string>
 </resources>
