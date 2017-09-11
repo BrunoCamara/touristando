@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.brunoomcamara.touristando.NavigationActivity"
-    tools:showIn="@layout/app_bar_navigation">
+    tools:context="com.brunoomcamara.touristando.CidadeActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/lista_estados"
+        android:id="@+id/lista_cidades"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
