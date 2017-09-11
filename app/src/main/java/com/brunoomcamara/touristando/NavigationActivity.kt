@@ -1,19 +1,22 @@
 package com.brunoomcamara.touristando
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
-import android.view.View
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import com.brunoomcamara.touristando.Adapter.EstadoAdapter
+import java.util.ArrayList
 
 class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,6 +40,21 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
+
+        val recyclerEstados = findViewById(R.id.lista_estados) as RecyclerView
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        val estadoAdapter = EstadoAdapter(ArrayList(), {
+            Toast.makeText(this, it.nome, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@NavigationActivity, CidadeActivity::class.java)
+            intent.putExtra("estadoId", it.id)
+            startActivity(intent)
+        })
+
+        recyclerEstados.layoutManager = layoutManager
+        recyclerEstados.adapter = estadoAdapter
+        recyclerEstados.setHasFixedSize(true)
+
+        estadoAdapter.inicializarEstados()
     }
 
     override fun onBackPressed() {

@@ -10,9 +10,10 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">Touristando</string>
+    <string name="title_activity_cidade">Cidades</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Lista</string>
     <string name="title_notifications">Mapa</string>
     <string name="linktour"><a href="https://faustikle.wixsite.com/touristando">Acesse: Touristando</a></string>
-    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_navigation">Touristando</string>
 </resources>
