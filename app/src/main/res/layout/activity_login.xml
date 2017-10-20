@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.brunoomcamara.touristando.SplashActivity"
-    android:orientation="vertical"
     android:background="@drawable/login4"
     android:gravity="center"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -51,6 +50,12 @@
         android:inputType="numberPassword"
         android:textColor="#000000"/>
 
+    <CheckBox
+        android:id="@+id/manter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="manter-me conctado" />
+
     <Button
         android:id="@+id/btLogin"
         android:layout_width="match_parent"
@@ -63,14 +68,5 @@
         android:background="#206900"
         android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/linktour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:autoLink="web"
-        android:text="@string/linktour"
-        android:linksClickable="true"/>
 </LinearLayout>
 

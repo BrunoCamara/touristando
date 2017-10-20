@@ -89,11 +89,7 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         // Handle navigation view item clicks here.
         val id = item.itemId
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+            if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_manage) {
 
@@ -101,8 +97,8 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
             sharePade()
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.out) {
+            out()
         }
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
@@ -116,5 +112,11 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         intentShare.putExtra(Intent.EXTRA_TEXT, "https://faustikle.wixsite.com/touristando")
         startActivity(intentShare)
     }
-
+    private fun out() {
+        var prefs = getSharedPreferences("arquivo_de_preferencias", 0)// cria o arquivo de preferencia
+        var editor = prefs.edit()
+        editor.putBoolean("estaLogado", false)// seta como verdadeiro
+        editor.commit()//salva a preferencia no arquivo de preferencia
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
 }
