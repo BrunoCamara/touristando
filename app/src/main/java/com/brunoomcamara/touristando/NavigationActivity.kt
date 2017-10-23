@@ -2,6 +2,7 @@ package com.brunoomcamara.touristando
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.StrictMode
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -14,8 +15,11 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.brunoomcamara.touristando.Adapter.EstadoAdapter
+import com.brunoomcamara.touristando.Model.PontoTuristico
+import com.brunoomcamara.touristando.Service.PontoTuristicoService
 import java.util.ArrayList
 
 class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +27,9 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
+
+        StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().permitAll().build())
+
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
@@ -55,6 +62,16 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         recyclerEstados.setHasFixedSize(true)
 
         estadoAdapter.inicializarEstados()
+    }
+
+    fun baixarCidade(v: View) {
+        val service = PontoTuristicoService()
+        val pontos = service.porCidade("João Pessoa")
+        if (pontos != null) {
+            for(ponto: PontoTuristico in pontos.iterator()) {
+                println(ponto.nome)
+            }
+        }
     }
 
     override fun onBackPressed() {
