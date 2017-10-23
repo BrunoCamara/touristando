@@ -31,6 +31,7 @@
         <activity
             android:name=".CidadeActivity"
             android:label="@string/title_activity_cidade" />
+        <activity android:name=".BuscaActivity"></activity>
     </application>
 
 </manifest>

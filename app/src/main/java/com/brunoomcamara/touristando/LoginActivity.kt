@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
             var inputUser = etUsuario.text //recebe usuario
             var inputSenha = etSenha.text // recebe senha
 
-            if (inputUser.toString().equals("bruno") && inputSenha.toString().equals("123")) {//teste autenticação
+            if (inputUser.toString().equals("usuario") && inputSenha.toString().equals("123")) {//teste autenticação
 
                 if(checkBox.isChecked){//metodo de verificar se checkbox esta selecionado
                     val prefs = getSharedPreferences("arquivo_de_preferencias", 0)// cria o arquivo de preferencia
@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun openHome() {//chama tela principal
-        startActivity(Intent(this@LoginActivity, NavigationActivity::class.java))
+        startActivity(Intent(this@LoginActivity, BuscaActivity::class.java))
     }
 
     private fun alert(a: String) {//metodo de mensagem
