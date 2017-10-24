@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.brunoomcamara.touristando">
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <meta-data android:name="DATABASE" android:value="touristando.db" />
@@ -39,7 +40,11 @@
         <activity
             android:name=".CidadeActivity"
             android:label="@string/title_activity_cidade" />
-        <activity android:name=".BuscaActivity"></activity>
+        <activity android:name=".BuscaActivity" />
+        <activity
+            android:name=".ListagemPontosActivity"
+            android:label="@string/title_activity_listagem_pontos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.brunoomcamara.touristando.Service
 
 import com.brunoomcamara.touristando.Model.PontoTuristico
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -16,9 +17,8 @@ class PontoTuristicoService {
         this.service = retrofit.create(IPontoTuristicoService::class.java)
     }
 
-    fun porCidade(cidade: String): List<PontoTuristico>? {
-        val call = this.service.buscarPorCidade(cidade)
-        return call.execute().body()
+    fun porCidade(cidade: String): Call<List<PontoTuristico>> {
+        return this.service.buscarPorCidade(cidade)
     }
 
     fun todos(): List<PontoTuristico>? {

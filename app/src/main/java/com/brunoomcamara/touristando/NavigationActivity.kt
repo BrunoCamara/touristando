@@ -67,11 +67,11 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     fun baixarCidade(v: View) {
         val service = PontoTuristicoService()
         val pontos = service.porCidade("João Pessoa")
-        if (pontos != null) {
-            for(ponto: PontoTuristico in pontos.iterator()) {
-                println(ponto.nome)
-            }
-        }
+//        if (pontos != null) {
+//            for(ponto: PontoTuristico in pontos.iterator()) {
+//                println(ponto.nome)
+//            }
+//        }
     }
 
     override fun onBackPressed() {
