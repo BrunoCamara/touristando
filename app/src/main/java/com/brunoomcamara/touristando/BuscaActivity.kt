@@ -58,9 +58,9 @@ class BuscaActivity : AppCompatActivity() {
     }
 
     fun buscar(v: View) {
-
+        val cid = cidades!!.selectedItem.toString()
         val service = PontoTuristicoService()
-        val call = service.porCidade("João Pessoa")
+        val call = service.porCidade(cid)
         call.enqueue(object: Callback<List<PontoTuristico>> {
 
             override fun onResponse(call: Call<List<PontoTuristico>>, response: Response<List<PontoTuristico>>) {
@@ -76,7 +76,7 @@ class BuscaActivity : AppCompatActivity() {
                         }
 
                         val intent = Intent(this@BuscaActivity, ListagemPontosActivity::class.java)
-                        intent.putExtra("cidade", "João Pessoa") //Fixo, ajusta para pegar do spinner
+                        intent.putExtra("cidade", cid)
                         startActivity(intent)
                     }
                 }
