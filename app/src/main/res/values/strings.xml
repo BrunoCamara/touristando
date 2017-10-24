@@ -55,5 +55,6 @@
         <item>SE</item>
         <item>TO</item>
     </string-array>
+    <string name="title_activity_listagem_pontos">ListagemPontosActivity</string>
 
 </resources>
