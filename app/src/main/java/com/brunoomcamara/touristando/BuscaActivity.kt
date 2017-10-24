@@ -10,7 +10,6 @@ import java.util.ArrayList
 
 
 import android.R.layout.simple_spinner_item
-import android.content.Intent
 import com.brunoomcamara.touristando.Model.PontoTuristico
 import com.brunoomcamara.touristando.Service.PontoTuristicoService
 import kotlinx.android.synthetic.main.activity_busca.*
@@ -30,6 +29,9 @@ class BuscaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_busca)
+
+
+
 
 
         // cria a lista(Spnner) no layout
@@ -53,28 +55,26 @@ class BuscaActivity : AppCompatActivity() {
 
     }
 
-    fun buscar(view: View) {
-        var cid = cidades!!.selectedItem.toString()
-        val service = PontoTuristicoService()
-        val call = service.porCidade(cid)
+    fun buscar(v: View) {
 
+        val service = PontoTuristicoService()
+        val call = service.porCidade("João Pessoa")
         call.enqueue(object: Callback<List<PontoTuristico>> {
 
             override fun onResponse(call: Call<List<PontoTuristico>>, response: Response<List<PontoTuristico>>) {
                 if (response.isSuccessful()) {
                     val pontos = response.body()
                         if (pontos != null) {
-                            for (ponto: PontoTuristico in pontos.iterator()) {
-                                ponto.save()
-                            }
+                        print(pontos)
                     }
                 }
             }
+
             override fun onFailure(call: Call<List<PontoTuristico>>, t: Throwable) {
                 // Erro ao consumir recurso
             }
         })
-        startActivity(Intent(this, ListagemPontosActivity::class.java))
+
     }
 
     fun pupularSpnnerCidade(id: Int) {
