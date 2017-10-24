@@ -27,6 +27,8 @@ class ListagemPontosActivity : AppCompatActivity() {
         recyclerPontosTuristicos.layoutManager = layoutManager
         recyclerPontosTuristicos.adapter = pontoTuristicoAdapter
         recyclerPontosTuristicos.setHasFixedSize(true)
+        //pontoTuristicoAdapter.addPontos(pontos)
+
 
         val service = PontoTuristicoService()
         val call = service.porCidade("João Pessoa")
@@ -38,7 +40,7 @@ class ListagemPontosActivity : AppCompatActivity() {
                     val pontos = response.body()
 
                     if (pontos != null) {
-                        pontoTuristicoAdapter.addPontos(pontos)
+                        //pontos.save()
                     }
                 }
             }

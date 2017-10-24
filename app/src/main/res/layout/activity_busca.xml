@@ -41,6 +41,7 @@ android:orientation="vertical">
         android:textColor="#206900" />
 
     <Button
+        android:id="@+id/btnbusca"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/buscar"
@@ -50,7 +51,7 @@ android:orientation="vertical">
         android:textStyle="bold"
         android:textColor="#fff"
         android:background="#206900"
-        android:onClick="buscarCategoria"
+        android:onClick="buscar"
         />
 
     <Spinner
