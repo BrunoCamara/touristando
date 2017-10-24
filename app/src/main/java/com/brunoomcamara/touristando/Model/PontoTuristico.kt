@@ -4,11 +4,13 @@ import com.orm.SugarRecord
 
 class PontoTuristico: SugarRecord() {
 
-    val id: String = ""
+    val _id: String = ""
     var nome: String = ""
+    var cidade: String = ""
     val imagem: String = ""
     var endereco: String = ""
-    val localizacao: Localizacao? = null
+    val lat: String = ""
+    val log: String = ""
     val nota: Int? = null
 
     fun PontoTuristico(){}

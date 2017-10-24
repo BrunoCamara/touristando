@@ -10,8 +10,10 @@ import java.util.ArrayList
 
 
 import android.R.layout.simple_spinner_item
+import android.content.Intent
 import com.brunoomcamara.touristando.Model.PontoTuristico
 import com.brunoomcamara.touristando.Service.PontoTuristicoService
+import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_busca.*
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
@@ -64,8 +66,18 @@ class BuscaActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<PontoTuristico>>, response: Response<List<PontoTuristico>>) {
                 if (response.isSuccessful()) {
                     val pontos = response.body()
-                        if (pontos != null) {
-                        print(pontos)
+                    if (pontos != null) {
+                        for (ponto: PontoTuristico in pontos.iterator()) {
+                            val pontoBuscado = SugarRecord.find(PontoTuristico::class.java, "_id = ?", ponto._id)
+
+                            if (pontoBuscado.isEmpty()) {
+                                ponto.save()
+                            }
+                        }
+
+                        val intent = Intent(this@BuscaActivity, ListagemPontosActivity::class.java)
+                        intent.putExtra("cidade", "João Pessoa") //Fixo, ajusta para pegar do spinner
+                        startActivity(intent)
                     }
                 }
             }

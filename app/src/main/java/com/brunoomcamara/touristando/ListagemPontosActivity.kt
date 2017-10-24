@@ -7,10 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import com.brunoomcamara.touristando.Adapter.PontoTuristicoAdapter
 import com.brunoomcamara.touristando.Model.PontoTuristico
-import com.brunoomcamara.touristando.Service.PontoTuristicoService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.orm.SugarRecord
 
 class ListagemPontosActivity : AppCompatActivity() {
 
@@ -27,28 +24,9 @@ class ListagemPontosActivity : AppCompatActivity() {
         recyclerPontosTuristicos.layoutManager = layoutManager
         recyclerPontosTuristicos.adapter = pontoTuristicoAdapter
         recyclerPontosTuristicos.setHasFixedSize(true)
-        //pontoTuristicoAdapter.addPontos(pontos)
-
-
-        val service = PontoTuristicoService()
-        val call = service.porCidade("João Pessoa")
-        call.enqueue(object: Callback<List<PontoTuristico>> {
-
-            override fun onResponse(call: Call<List<PontoTuristico>>, response: Response<List<PontoTuristico>>) {
-                if (response.isSuccessful()) {
-                    println(response.body())
-                    val pontos = response.body()
-
-                    if (pontos != null) {
-                        //pontos.save()
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<PontoTuristico>>, t: Throwable) {
-                // Erro ao consumir recurso
-            }
-        })
+        var cidade = intent.extras.getString("cidade")
+        val pontos = SugarRecord.find(PontoTuristico::class.java, "cidade = ?", cidade)
+        pontoTuristicoAdapter.addPontos(pontos)
     }
 
 }
