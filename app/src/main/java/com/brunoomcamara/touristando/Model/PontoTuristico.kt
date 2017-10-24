@@ -1,3 +1,23 @@
 package com.brunoomcamara.touristando.Model
 
-class PontoTuristico(val _id: String, val nome: String, val imagem: String, val endereco: String, val localizacao: Localizacao, val nota: Int?)
+import com.orm.SugarRecord
+
+class PontoTuristico: SugarRecord() {
+
+    val id: String = ""
+    var nome: String = ""
+    val imagem: String = ""
+    var endereco: String = ""
+    val localizacao: Localizacao? = null
+    val nota: Int? = null
+
+    fun PontoTuristico(){}
+
+    fun PontoTuristico(nome: String, endereco: String){
+        this.nome = nome
+        this.endereco = endereco
+    }
+
+
+}
+
