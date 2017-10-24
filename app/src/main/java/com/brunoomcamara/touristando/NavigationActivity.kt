@@ -3,8 +3,6 @@ package com.brunoomcamara.touristando
 import android.content.Intent
 import android.os.Bundle
 import android.os.StrictMode
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
@@ -17,8 +15,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.brunoomcamara.touristando.Adapter.EstadoAdapter
-import com.brunoomcamara.touristando.Model.PontoTuristico
 import com.brunoomcamara.touristando.Service.PontoTuristicoService
 import java.util.ArrayList
 
@@ -33,12 +29,6 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -48,20 +38,6 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val navigationView = findViewById(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
 
-        val recyclerEstados = findViewById(R.id.lista_estados) as RecyclerView
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        val estadoAdapter = EstadoAdapter(ArrayList(), {
-            Toast.makeText(this, it.nome, Toast.LENGTH_SHORT).show()
-            val intent = Intent(this@NavigationActivity, CidadeActivity::class.java)
-            intent.putExtra("estadoId", it.id)
-            startActivity(intent)
-        })
-
-        recyclerEstados.layoutManager = layoutManager
-        recyclerEstados.adapter = estadoAdapter
-        recyclerEstados.setHasFixedSize(true)
-
-        estadoAdapter.inicializarEstados()
     }
 
     fun baixarCidade(v: View) {

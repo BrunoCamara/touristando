@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun openHome() {//chama tela principal
-        startActivity(Intent(this@LoginActivity, BuscaActivity::class.java))
+        startActivity(Intent(this, NavigationActivity::class.java))
     }
 
     private fun alert(a: String) {//metodo de mensagem

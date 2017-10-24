@@ -9,19 +9,6 @@
     tools:context="com.brunoomcamara.touristando.NavigationActivity"
     tools:showIn="@layout/app_bar_navigation">
 
-    <Button
-        android:id="@+id/btBuscaPonto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginTop="10dp"
-        android:text="Buscar"
-        android:textColor="#ffffff"
-        android:background="#206900"
-        android:onClick="baixarCidade"
-        android:textStyle="bold"/>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lista_estados"
         android:scrollbars="vertical"

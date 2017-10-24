@@ -4,7 +4,7 @@ import com.orm.SugarRecord
 
 class PontoTuristico: SugarRecord() {
 
-    val id: String = ""
+    val _id: String = ""
     var nome: String = ""
     val imagem: String = ""
     var endereco: String = ""
@@ -17,7 +17,5 @@ class PontoTuristico: SugarRecord() {
         this.nome = nome
         this.endereco = endereco
     }
-
-
 }
 

@@ -54,7 +54,7 @@
         android:id="@+id/manter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="manter-me conctado" />
+        android:text="manter-me conectado" />
 
     <Button
         android:id="@+id/btLogin"
