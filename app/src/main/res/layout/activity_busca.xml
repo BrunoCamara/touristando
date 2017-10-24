@@ -50,6 +50,7 @@ android:orientation="vertical">
         android:textStyle="bold"
         android:textColor="#fff"
         android:background="#206900"
+        android:onClick="buscarCategoria"
         />
 
     <Spinner
@@ -76,6 +77,12 @@ android:orientation="vertical">
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:textSize="15dp"
-        android:backgroundTint="#000000"/>
+        android:backgroundTint="#000000"
+        />
+
+    <TextView
+        android:id="@+id/retorno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </GridLayout>

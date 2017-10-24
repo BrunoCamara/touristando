@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import java.util.ArrayList;
 
+
 import static android.R.layout.simple_spinner_item;
+
 
 public class BuscaActivity extends AppCompatActivity {
 
@@ -16,7 +18,6 @@ public class BuscaActivity extends AppCompatActivity {
     Spinner cidades;
     Spinner categoria;
     ArrayList <String> cids;
-    int IdEstado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,107 +45,110 @@ public class BuscaActivity extends AppCompatActivity {
         });
     }
 
-    public void pupularSpnnerCidade(int id) {
+   public  void buscar(View v) {
 
-        cids = obterCidadesPelo(id+1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cids);
+   }
 
-        cidades = (Spinner) findViewById(R.id.spinCidades);
-        cidades.setAdapter(adapter2);
+   public void pupularSpnnerCidade(int id) {
 
-    }
+       cids = obterCidadesPelo(id+1);
+       ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cids);
 
-    public ArrayList<String> obterCidadesPelo(int id) {
+       cidades = (Spinner) findViewById(R.id.spinCidades);
+       cidades.setAdapter(adapter2);
 
-        ArrayList <String> cidade = new ArrayList<>();
+   }
+   public ArrayList<String> obterCidadesPelo(int id) {
 
-        switch (id) {
-            case 1:
-                cidade.add("Rio Branco");
-                break;
-            case 2:
-                cidade.add("Maceió");
-                break;
-            case 3:
-                cidade.add("Macapá");
-                break;
-            case 4:
-                cidade.add("Manaus");
-                break;
-            case 5:
-                cidade.add("Salvador");
-                break;
-            case 6:
-                cidade.add("Fortaleza");
-                break;
-            case 7:
-                cidade.add("Brasília");
-                break;
-            case 8:
-                cidade.add("Vitória");
-                break;
-            case 9:
-                cidade.add("Goiânia");
-                break;
-            case 10:
-                cidade.add("São Luís");
-                break;
-            case 11:
-                cidade.add("Cuiabá");
-                break;
-            case 12:
-                cidade.add("Campo Grande");
-                break;
-            case 13:
-                cidade.add("Belo Horizonte");
-                break;
-            case 14:
-                cidade.add("Belém");
-                break;
-            case 15:
-                cidade.add("João Pessoa");
-                cidade.add("Campina Grande");
-                cidade.add("Santa Rita");
-                break;
-            case 16:
-                cidade.add("Curitiba");
-                break;
-            case 17:
-                cidade.add("Recife");
-                break;
-            case 18:
-                cidade.add("Teresina");
-                break;
-            case 19:
-                cidade.add("Rio de Janeiro");
-                break;
-            case 20:
-                cidade.add("Natal");
-                break;
-            case 21:
-                cidade.add("Porto Alegre");
-                break;
-            case 22:
-                cidade.add("Porto Velho");
-                break;
-            case 23:
-                cidade.add("Boa Vista");
-                break;
-            case 24:
-                cidade.add("Florianópolis");
-                break;
-            case 25:
-                cidade.add("São Paulo");
-                break;
-            case 26:
-                cidade.add("Aracaju");
-                break;
-            case 27:
-                cidade.add("Palmas");
-                break;
-        }
-        return cidade;
-    }
+       ArrayList <String> cidade = new ArrayList<>();
+
+       switch (id) {
+           case 1:
+               cidade.add("Rio Branco");
+               break;
+           case 2:
+               cidade.add("Maceió");
+               break;
+           case 3:
+               cidade.add("Macapá");
+               break;
+           case 4:
+               cidade.add("Manaus");
+               break;
+           case 5:
+               cidade.add("Salvador");
+               break;
+           case 6:
+               cidade.add("Fortaleza");
+               break;
+           case 7:
+               cidade.add("Brasília");
+               break;
+           case 8:
+               cidade.add("Vitória");
+               break;
+           case 9:
+               cidade.add("Goiânia");
+               break;
+           case 10:
+               cidade.add("São Luís");
+               break;
+           case 11:
+               cidade.add("Cuiabá");
+               break;
+           case 12:
+               cidade.add("Campo Grande");
+               break;
+           case 13:
+               cidade.add("Belo Horizonte");
+               break;
+           case 14:
+               cidade.add("Belém");
+               break;
+           case 15:
+               cidade.add("João Pessoa");
+               cidade.add("Campina Grande");
+               cidade.add("Santa Rita");
+               break;
+           case 16:
+               cidade.add("Curitiba");
+               break;
+           case 17:
+               cidade.add("Recife");
+               break;
+           case 18:
+               cidade.add("Teresina");
+               break;
+           case 19:
+               cidade.add("Rio de Janeiro");
+               break;
+           case 20:
+               cidade.add("Natal");
+               break;
+           case 21:
+               cidade.add("Porto Alegre");
+               break;
+           case 22:
+               cidade.add("Porto Velho");
+               break;
+           case 23:
+               cidade.add("Boa Vista");
+               break;
+           case 24:
+               cidade.add("Florianópolis");
+               break;
+           case 25:
+               cidade.add("São Paulo");
+               break;
+           case 26:
+               cidade.add("Aracaju");
+               break;
+           case 27:
+               cidade.add("Palmas");
+               break;
+       }
+       return cidade;
+   }
 }
 
 
