@@ -9,12 +9,12 @@ class PontoTuristicoService {
     private val service: IPontoTuristicoService
 
     init {
-        val retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder()//edereço do serviço
                 .baseUrl("http://138.197.98.219:3000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-        this.service = retrofit.create(IPontoTuristicoService::class.java)
+        this.service = retrofit.create(IPontoTuristicoService::class.java)//caminho dentro do serviço
     }
 
     fun porCidade(cidade: String): Call<List<PontoTuristico>> {

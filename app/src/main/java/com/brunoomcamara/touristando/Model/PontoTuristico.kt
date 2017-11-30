@@ -2,7 +2,7 @@ package com.brunoomcamara.touristando.Model
 
 import com.orm.SugarRecord
 
-class PontoTuristico: SugarRecord() {
+class PontoTuristico : SugarRecord() {
 
     val _id: String = ""
     var nome: String = ""
@@ -15,9 +15,5 @@ class PontoTuristico: SugarRecord() {
 
     fun PontoTuristico(){}
 
-    fun PontoTuristico(nome: String, endereco: String){
-        this.nome = nome
-        this.endereco = endereco
-    }
 }
 

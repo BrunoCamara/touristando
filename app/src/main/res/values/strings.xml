@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">touristando</string>
     <string name="usuario">Login</string>
+    <string name="Nomeuser">Usuário</string>
     <string name="email">Email</string>
     <string name="pass">Senha</string>
     <string name="title_activity_home">Touristando</string>
@@ -25,7 +26,7 @@
         <item>Pontos turisticos</item>
         <item>Outros</item>
     </string-array>
-,
+
     <string-array name="estados">
         <item>AC</item>
         <item>AL</item>
@@ -56,5 +57,9 @@
         <item>TO</item>
     </string-array>
     <string name="title_activity_listagem_pontos">ListagemPontosActivity</string>
+    <string name="list">Lista</string>
+    <string name="map">Mapa</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="info">Informação</string>
 
 </resources>

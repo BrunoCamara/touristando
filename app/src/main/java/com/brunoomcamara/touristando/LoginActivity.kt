@@ -15,9 +15,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         btLogin.setOnClickListener {//clic butao login
 
+
             var checkBox = manter
-            var inputUser = etUsuario.text //recebe usuario
-            var inputSenha = etSenha.text // recebe senha
+            var inputUser =  etUsuario.text //recebe usuario
+            var inputSenha =  etSenha.text // recebe senha
 
             if (inputUser.toString().equals("usuario") && inputSenha.toString().equals("123")) {//teste autenticação
 

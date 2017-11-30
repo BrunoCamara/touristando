@@ -15,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash)
 
+        //teste sahrepreference (checkbox)
         var prefs = getSharedPreferences("arquivo_de_preferencias", Context.MODE_PRIVATE)
         var jaLogou = prefs.getBoolean("estaLogado",false)
 
